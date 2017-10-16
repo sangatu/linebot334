@@ -231,7 +231,7 @@ public class KitchenSinkController {
                 content.getPackageId(), content.getStickerId())
         );
     }
-
+/////自働応答
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
         String text = content.getText();
@@ -307,7 +307,7 @@ public class KitchenSinkController {
                 this.reply(replyToken, templateMessage);
                 break;
             }
-            case "carousel": {
+            case "だれだこいつ": {
                 String imageUrl = createUri("/static/buttons/1040.jpg");
                 CarouselTemplate carouselTemplate = new CarouselTemplate(
                         Arrays.asList(
@@ -327,7 +327,7 @@ public class KitchenSinkController {
                                                 "hello こんにちは",
                                                 "hello こんにちは"),
                                         new MessageAction("Say message",
-                                                          "Rice=米")
+                                                          "ちくわ大明神")
                                 )),
                                 new CarouselColumn(imageUrl, "Datetime Picker", "Please select a date, time or datetime", Arrays.asList(
                                         new DatetimePickerAction("Datetime",
