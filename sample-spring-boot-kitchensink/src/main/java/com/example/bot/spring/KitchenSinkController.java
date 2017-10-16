@@ -301,7 +301,7 @@ public class KitchenSinkController {
                                                    "hello こんにちは",
                                                    "hello こんにちは"),
                                 new MessageAction("Say message",
-                                                  "Rice=米")
+                                                  "ちくわ大明神")
                         ));
                 TemplateMessage templateMessage = new TemplateMessage("Button alt text", buttonsTemplate);
                 this.reply(replyToken, templateMessage);
