@@ -397,7 +397,7 @@ public class KitchenSinkController {
             }
             //////////////////ここまで/////////////////////////////////////////
             //////////////////smmrstart/////////////////////////////////////
-        /*    case "商品情報":{
+            case "商品情報":{
                 String imageUrl = createUri("/static/Products/main-products.png");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
                         imageUrl,
@@ -526,7 +526,7 @@ public class KitchenSinkController {
                    this.reply(replyToken, templateMessage);
                    break;
               }
-*/
+
             case "ポイント確認":{
             	String userId = event.getSource().getUserId();
                 if (userId != null) {
