@@ -612,13 +612,6 @@ public class KitchenSinkController {
              * add 2017.10.17 taku.shimomura end
              */
 
-
-
-
-
-
-
-
            ///////////////////smmrend/////////////////////////////////////////
             case "buttons": {
                 String imageUrl = createUri("/static/buttons/1040.jpg");
