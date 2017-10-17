@@ -295,7 +295,7 @@ public class KitchenSinkController {
             case "アドバイス": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "Q1頬は脂っぽいですか？",
-                new MessageAction("Yes", "Q1.Ys"),
+                new MessageAction("Yes", "Q1.Yes"),
                 new MessageAction("No", "Q1.No")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
