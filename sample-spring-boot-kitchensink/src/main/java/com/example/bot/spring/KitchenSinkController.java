@@ -550,7 +550,7 @@ public class KitchenSinkController {
                 }
             	break;
             }
-
+*/
             case "訪問日時を教えて":{
             	String userId = event.getSource().getUserId();
 
@@ -579,7 +579,7 @@ public class KitchenSinkController {
                 }
             	break;
             }
-*/
+
 
            ///////////////////smmrend/////////////////////////////////////////
             case "buttons": {
