@@ -276,11 +276,21 @@ public class KitchenSinkController {
                 }
                 break;
             }
-            case "confirm": {
+         /*   case "confirm": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                         "Do it?",
                         new MessageAction("Yes", "Yes!"),
                         new MessageAction("No", "No!")
+                );
+                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+                this.reply(replyToken, templateMessage);
+                break;
+            }*/
+            case "訪問予約": {
+                ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                        "電話とネットのどちらで訪問予約を行いますか？",
+                        new MessageAction("電話をかける", "電話で予約する"),
+                        new MessageAction("ネットで予約する", "ネットで予約する")
                 );
                 TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
                 this.reply(replyToken, templateMessage);
@@ -307,6 +317,7 @@ public class KitchenSinkController {
                 this.reply(replyToken, templateMessage);
                 break;
             }
+
             case "だれだこいつ": {
                 String imageUrl = createUri("/static/buttons/1040.jpg");
                 CarouselTemplate carouselTemplate = new CarouselTemplate(
