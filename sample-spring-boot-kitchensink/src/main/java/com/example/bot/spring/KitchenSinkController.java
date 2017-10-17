@@ -286,27 +286,6 @@ public class KitchenSinkController {
                  } else {
                      this.replyText(replyToken, "Bot can't use profile API without user ID");
                  }
-                 if (userId != null) {
-                     lineMessagingClient
-                             .getProfile(userId)
-                             .whenComplete((profile, throwable) -> {
-                                 if (throwable != null) {
-                                     this.replyText(replyToken, throwable.getMessage());
-                                     return;
-                                 }
-
-                                 this.reply(
-                                         replyToken,
-                                         Arrays.asList(new TextMessage(
-                                                               "ご意見ありがとうございます。\n"
-                                                               + "これからもどうぞよろしくお願いします。"))
-                                 );
-
-                             });
-                 } else {
-                     this.replyText(replyToken, "Bot can't use profile API without user ID");
-                 }
-                 break;
             }
 
             case "bye": {
