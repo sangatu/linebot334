@@ -278,7 +278,7 @@ public class KitchenSinkController {
                                  this.reply(
                                          replyToken,
                                          Arrays.asList(new TextMessage(
-                                                               "いつもご利用ありがとうございます"
+                                                               "いつもご利用ありがとうございます\n"
                                                                + "ご意見ご要望などがございましたらこちらでお願いします。"))
                                  );
 
