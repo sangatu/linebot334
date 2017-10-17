@@ -286,9 +286,8 @@ public class KitchenSinkController {
                 this.reply(replyToken, templateMessage);
                 break;
             }*/
-
+            
             case "訪問予約": {
-
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                         "電話とネットのどちらで訪問予約を行いますか？",
                         new MessageAction("電話をかける", "電話で予約する"),
@@ -297,7 +296,7 @@ public class KitchenSinkController {
                 TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
                 this.reply(replyToken, templateMessage);
                 break;
-            }
+
             case "buttons": {
                 String imageUrl = createUri("/static/buttons/1040.jpg");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
