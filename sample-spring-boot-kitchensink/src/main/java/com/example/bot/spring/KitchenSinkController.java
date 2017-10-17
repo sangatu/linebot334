@@ -286,8 +286,7 @@ public class KitchenSinkController {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "電話とネットのどちらで予約をしますか？",
                 new MessageAction("電話予約", "電話で予約する"),
-                new MessageAction("ネット予約", "ネットで予約する"),
-                new MessageAction("キャンセル", "キャンセル")
+                new MessageAction("ネット予約", "ネットで予約する")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
                this.reply(replyToken, templateMessage);
@@ -295,14 +294,100 @@ public class KitchenSinkController {
             }
             case "アドバイス": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
-                "乾燥",
-                new MessageAction("○", "○"),
-                new MessageAction("×", "×")
+                "Q1頬は脂っぽいですか？",
+                new MessageAction("Yes", "Q1.Ys"),
+                new MessageAction("No", "Q1.No")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
                this.reply(replyToken, templateMessage);
                break;
             }
+            case "Q1.Yes": {
+                ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                "Q2A頬に潤い(みずみずしさ)がありますか？",
+                new MessageAction("Yes", "Q2A.Ys"),
+                new MessageAction("No", "Q2A.No")
+                 );
+               TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+               this.reply(replyToken, templateMessage);
+               break;
+            }
+            case "Q2A.Yes":{
+            	this.replyText(replyToken, "『あなたの肌は脂性肌タイプです』\n皮脂も水分も多めの状態で潤いはあるけどべたつきやすい肌。\n毛孔が大きく、キメがやや粗い。");
+            	break;
+            }
+            case "Q2A.No": {
+                ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                "Q3A頬はかさつきやすいですか？",
+                new MessageAction("Yes", "Q3A.Ys"),
+                new MessageAction("No", "Q3A.No")
+                 );
+               TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+               this.reply(replyToken, templateMessage);
+               break;
+            }
+            case "Q3A.No":{
+            	this.replyText(replyToken, "『あなたの肌は脂性肌タイプです』\n皮脂も水分も多めの状態で潤いはあるけどべたつきやすい肌。\n毛孔が大きく、キメがやや粗い。");
+            	break;
+            }
+            case "Q3A.Yes":{
+            	this.replyText(replyToken, "『あなたの肌は混合肌タイプです』\n皮脂は多いのに水分が府相している状態。脂っぽいのにかさつきがちな肌。\nニキビになりやすい。");
+            	break;
+            }
+
+            case "Q1.No": {
+                ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                "Q2B洗顔後、お手入れをしないでいると頬が突っ張りますか？",
+                new MessageAction("Yes", "Q2B.Ys"),
+                new MessageAction("No", "Q2B.No")
+                 );
+               TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+               this.reply(replyToken, templateMessage);
+               break;
+            }
+            case "Q2B.Yes": {
+                ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                "Q3B頬がかさつきやすいですか？",
+                new MessageAction("Yes", "Q3B.Ys"),
+                new MessageAction("No", "Q3B.No")
+                 );
+               TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+               this.reply(replyToken, templateMessage);
+               break;
+            }
+            case "Q3B.Yes":{
+            	this.replyText(replyToken, "『あなたの肌は乾燥肌タイプです』\n皮脂が少なく水分も不足している状態で、かさつきやすく、乾燥している肌。\n肌荒れの状態でしわもできやすい。");
+            	break;
+            }
+            case "Q3B.No":{
+            	this.replyText(replyToken, "『あなたの肌は健康肌タイプです』\n皮脂が少ないため、水分は多めで潤いのある肌。\n季節や環境の変化により、脂っぽくなったりかさついたり変化しがちである。\n角質細胞層が良い状態でしっとりしている。");
+            	break;
+            }
+            case "Q2B.No": {
+                ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                "Q3C肌にしっとり感がありますか？",
+                new MessageAction("Yes", "Q3C.Ys"),
+                new MessageAction("No", "Q3C.No")
+                 );
+               TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+               this.reply(replyToken, templateMessage);
+               break;
+            }
+            case "Q3C.Yes":{
+            	this.replyText(replyToken, "『あなたの肌は健康肌タイプです』\n皮脂が少ないため、水分は多めで潤いのある肌。\n季節や環境の変化により、脂っぽくなったりかさついたり変化しがちである。\n角質細胞層が良い状態でしっとりしている。");
+            	break;
+            }
+            case "Q3C.No": {
+                ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                "Q3B頬がかさつきやすいですか？",
+                new MessageAction("Yes", "Q3B.Ys"),
+                new MessageAction("No", "Q3B.No")
+                 );
+               TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+               this.reply(replyToken, templateMessage);
+               break;
+            }
+           ////////////////////////////////////////////
             case "buttons": {
                 String imageUrl = createUri("/static/buttons/1040.jpg");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
