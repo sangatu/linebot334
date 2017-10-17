@@ -278,27 +278,32 @@ public class KitchenSinkController {
                                  this.reply(
                                          replyToken,
                                          Arrays.asList(new TextMessage(
-                                                               "いつもご利用ありがとうございます\n"
-                                                               + "ご意見ご要望などがございましたらこちらでお願いします。"))
+                                                               "いつもご利用ありがとうございます"
+                                                               + "ご意見ご要望などがございましたらこちらでお願いします"))
                                  );
 
                              });
+                 } else {
+                     this.replyText(replyToken, "Bot can't use profile API without user ID");
+                 }
+                 break;
+                 if (userId != null) {
                      lineMessagingClient
-                     .getProfile(userId)
-                     .whenComplete((profile, throwable) -> {
-                         if (throwable != null) {
-                             this.replyText(replyToken, throwable.getMessage());
-                             return;
-                         }
+                             .getProfile(userId)
+                             .whenComplete((profile, throwable) -> {
+                                 if (throwable != null) {
+                                     this.replyText(replyToken, throwable.getMessage());
+                                     return;
+                                 }
 
-                         this.reply(
-                                 replyToken,
-                                 Arrays.asList(new TextMessage(
-                                                       "ご意見ありがとうございます\n"
-                                                       + "これからもどうぞよろしくお願いします。"))
-                         );
+                                 this.reply(
+                                         replyToken,
+                                         Arrays.asList(new TextMessage(
+                                                               "ご意見ありがとうございます。\n"
+                                                               + "これからもどうぞよろしくお願いします。"))
+                                 );
 
-                     });
+                             });
                  } else {
                      this.replyText(replyToken, "Bot can't use profile API without user ID");
                  }
