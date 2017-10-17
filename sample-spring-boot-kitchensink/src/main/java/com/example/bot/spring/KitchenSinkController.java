@@ -264,10 +264,10 @@ public class KitchenSinkController {
                 break;
             }
             /////////////////////////////////////////////////////////////////////////////////////
-            case "目安箱":
+            case "目安箱":{
             	this.replyText(replyToken, "いつもご利用ありがとうございます。\nご意見などがございましたらこちらでお願いします。"+"ご意見ありがとうございます。\nこれからもどうぞよろしくお願いします。");
             	break;
-
+            }
             case "bye": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
@@ -286,7 +286,18 @@ public class KitchenSinkController {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "電話とネットのどちらで予約をしますか？",
                 new MessageAction("電話予約", "電話で予約する"),
-                new MessageAction("ネット予約", "ネットで予約する")
+                new MessageAction("ネット予約", "ネットで予約する"),
+                new MessageAction("キャンセル", "キャンセル")
+                 );
+               TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+               this.reply(replyToken, templateMessage);
+               break;
+            }
+            case "アドバイス": {
+                ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                "乾燥",
+                new MessageAction("○", "○"),
+                new MessageAction("×", "×")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
                this.reply(replyToken, templateMessage);
