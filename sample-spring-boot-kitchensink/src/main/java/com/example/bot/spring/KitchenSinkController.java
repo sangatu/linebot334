@@ -264,10 +264,9 @@ public class KitchenSinkController {
                 break;
             }
             /////////////////////////////////////////////////////////////////////////////////////
-            case "目安箱": {
+            case "目安箱":
             	this.replyText(replyToken, "いつもご利用ありがとうございます。\nご意見などがございましたらこちらでお願いします。\n");
             	break;
-            }
 
             case "bye": {
                 Source source = event.getSource();
