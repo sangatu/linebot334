@@ -285,12 +285,20 @@ public class KitchenSinkController {
             case "訪問予約": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "電話とネットのどちらで予約をしますか？",
-                new MessageAction("電話予約", "072-368-2222"),
+                new MessageAction("電話予約", "電話で予約する"),
                 new MessageAction("ネット予約", "ネットで予約する")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
                this.reply(replyToken, templateMessage);
                break;
+            }
+            case "電話で予約する":{
+            	this.replyText(replyToken, "\n072-368-2222");
+            	break;
+            }
+            case "ネットで予約する":{
+            	this.reply(replyText(replyToken,"http://www.ionkesho.jp/");
+            	break;
             }
             case "アドバイス": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
