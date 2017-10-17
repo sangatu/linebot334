@@ -395,7 +395,231 @@ public class KitchenSinkController {
                this.reply(replyToken, templateMessage);
                break;
             }
-           ////////////////////////////////////////////
+
+            //////////////////smmrstart/////////////////////////////////////
+            case "商品情報":{
+                String imageUrl = createUri("/static/Products/main-products.png");
+                ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
+                        imageUrl,
+                        "商品情報選択",
+                        "どの条件で探しますか？",
+                        Arrays.asList(
+                                new MessageAction("クリーム・美容液・洗顔・メイクアップ",
+                                                   "クリーム・美容液・洗顔・メイクアップ"),
+                                new MessageAction("ローション・ヘアケア・健康食品",
+                                        "ローション・ヘアケア・健康食品"),
+                                new MessageAction("ニキビ・乾燥肌・年齢肌",
+                                        "ニキビ・乾燥肌・年齢肌"),
+                                new MessageAction("ハリ・脂性肌・毛穴の汚れ",
+                                                  "ハリ・脂性肌・毛穴の汚れ")
+                        ));
+                TemplateMessage templateMessage = new TemplateMessage("Button alt text", buttonsTemplate);
+                this.reply(replyToken, templateMessage);
+                break;
+            }
+            /***
+             * add 2017.10.16 taku.shimomura end
+             */
+
+            /***
+             * カテゴリをイメージカルーセルで表示
+             * add 2017.10.17 shimomurataku begin
+             */
+            case "クリーム・美容液・洗顔・メイクアップ":{
+            	 String imageUrl = createUri("/static/Products/Category/cream/maberasu.png");
+            	 String imgLiquidFoundation = createUri("/static/Products/Category/liquidfoundation/success.png");
+            	 String imgBodyCare = createUri("/static/Products/Category/bodycare/ionsoap.png");
+            	 String imgMakeUp = createUri("/static/Products/Category/makeup/lipcream.png");
+
+                 ImageCarouselTemplate imageCarouselTemplate = new ImageCarouselTemplate(
+                         Arrays.asList(
+                                 new ImageCarouselColumn(imageUrl,
+                                         new URIAction("クリーム",
+                                                 "http://www.ionkesho.jp/products/category/cream.html")
+                                 ),
+                                 new ImageCarouselColumn(imgLiquidFoundation,
+                                         new URIAction("美容液",
+                                                 "http://www.ionkesho.jp/products/category/liquidfoundation.html")
+                                 ),
+                                 new ImageCarouselColumn(imgBodyCare,
+                                         new URIAction("ボディケア・洗顔",
+                                                 "http://www.ionkesho.jp/products/category/bodycare.html")
+                                 ),
+                                 new ImageCarouselColumn(imgMakeUp,
+                                         new URIAction("メイクアップ",
+                                                 "http://www.ionkesho.jp/products/category/makeup.html")
+                                 )
+                         ));
+                 TemplateMessage templateMessage = new TemplateMessage("ImageCarousel alt text", imageCarouselTemplate);
+                 this.reply(replyToken,templateMessage);
+                 break;
+            }
+            /***
+             * add 2017.10.17 taku.shimomura end
+             */
+
+            //カテゴリ2段目
+            case "ローション・ヘアケア・健康食品":{
+           	 String imageUrl = createUri("/static/Products/Category/lotion/highlotion.png");
+           	 String imgHairCare = createUri("/static/Products/Category/haircare/supershampoo-a.png");
+           	 String imgHealthFood = createUri("/static/Products/Category/healthfood/kireinoekisu.png");
+
+                ImageCarouselTemplate imageCarouselTemplate = new ImageCarouselTemplate(
+                        Arrays.asList(
+                                new ImageCarouselColumn(imageUrl,
+                                        new URIAction("ローション",
+                                                "http://www.ionkesho.jp/products/category/lotion.html")
+                                ),
+
+                                new ImageCarouselColumn(imgHairCare,
+                                        new URIAction("ヘアケア",
+                                                "http://www.ionkesho.jp/products/category/haircare.html")
+                                ),
+
+                                new ImageCarouselColumn(imgHealthFood,
+                                        new URIAction("健康食品",
+                                                "http://www.ionkesho.jp/products/category/healthfood.html")
+                                )
+                        ));
+
+                TemplateMessage templateMessage = new TemplateMessage("ImageCarousel alt text", imageCarouselTemplate);
+                this.reply(replyToken, templateMessage);
+                break;
+           }
+
+            /***
+             * 悩みをイメージカルーセル表示
+             * add 2017.10.17 taku.shimomura begin
+             */
+            case "ニキビ・乾燥肌・年齢肌":{
+           	 String imageUrl = createUri("/static/Products/Skin/acne/creamsoap.png");
+           	 String imgSkinAge = createUri("/static/Products/Skin/age/lamirumu.png");
+           	 String imgSkinDry = createUri("/static/Products/Skin/dry/newroyal.png");
+                ImageCarouselTemplate imageCarouselTemplate = new ImageCarouselTemplate(
+                        Arrays.asList(
+                                new ImageCarouselColumn(imageUrl,
+                                        new URIAction("ニキビ",
+                                                "http://www.ionkesho.jp/products/suffering/skincare01.html")
+                                ),
+                                new ImageCarouselColumn(imgSkinAge,
+                                        new URIAction("年齢肌",
+                                                "http://www.ionkesho.jp/products/suffering/skincare02.html")
+                                ),
+                                new ImageCarouselColumn(imgSkinDry,
+                                        new URIAction("乾燥肌",
+                                                "http://www.ionkesho.jp/products/suffering/skincare03.html")
+                                )
+                        ));
+                TemplateMessage templateMessage = new TemplateMessage("ImageCarousel alt text", imageCarouselTemplate);
+                this.reply(replyToken, templateMessage);
+                break;
+           }
+            /***
+             * add 2017.10.17 taku.shimomura end
+             */
+
+            //お悩み2段目
+            case "ハリ・脂性肌・毛穴の汚れ":{
+              	 String imageUrl = createUri("/static/Products/Skin/resilient/highlotion.png");
+              	 String imgSkinOily = createUri("/static/Products/Skin/oily/newgold.png");
+              	 String imgPores = createUri("/static/Products/Skin/success.png");
+
+                   ImageCarouselTemplate imageCarouselTemplate = new ImageCarouselTemplate(
+                           Arrays.asList(
+                                   new ImageCarouselColumn(imageUrl,
+                                           new URIAction("ハリがない",
+                                                   "http://www.ionkesho.jp/products/suffering/skincare04.html")
+                                   ),
+                                   new ImageCarouselColumn(imgSkinOily,
+                                           new URIAction("脂性肌",
+                                                   "http://www.ionkesho.jp/products/suffering/skincare05.html")
+                                   ),
+                                   new ImageCarouselColumn(imgPores,
+                                           new URIAction("毛穴の汚れ",
+                                                   "http://www.ionkesho.jp/products/suffering/skincare06.html")
+                                   )
+                           ));
+                   TemplateMessage templateMessage = new TemplateMessage("ImageCarousel alt text", imageCarouselTemplate);
+                   this.reply(replyToken, templateMessage);
+                   break;
+              }
+
+            /***
+             * ポイント確認
+             * add 2017.10.17 taku.shimomura begin
+             */
+            case "ポイント確認":{
+            	String userId = event.getSource().getUserId();
+                if (userId != null) {
+                    lineMessagingClient
+                            .getProfile(userId)
+                            .whenComplete((profile, throwable) -> {
+                                if (throwable != null) {
+                                    this.replyText(replyToken, throwable.getMessage());
+                                    return;
+                                }
+
+                                this.reply(
+                                        replyToken,
+                                        Arrays.asList(new TextMessage(
+                                                              profile.getDisplayName() + "さんのポイントは53万ポイントです"))
+                                );
+
+                            });
+                } else {
+                    this.replyText(replyToken, "Bot can't use profile API without user ID");
+                }
+            	break;
+            }
+            /***
+             * add 2017.10.17 taku.shimomura end
+             */
+
+            /***
+             * リマインド機能
+             * 訪問する日時を教えてくれる
+             * add 2017.10.17 taku.shimomura begin
+             */
+            case "訪問日時を教えて":{
+            	String userId = event.getSource().getUserId();
+
+                Calendar today = Calendar.getInstance();
+
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日kk時mm分");
+
+                if (userId != null) {
+                    lineMessagingClient
+                            .getProfile(userId)
+                            .whenComplete((profile, throwable) -> {
+                                if (throwable != null) {
+                                    this.replyText(replyToken, throwable.getMessage());
+                                    return;
+                                }
+
+                                this.reply(
+                                        replyToken,
+                                        Arrays.asList(new TextMessage(
+                                                              profile.getDisplayName() + "さんのご自宅には"+sdf.format(today.getTime())+"に訪問させていただきます"))
+                                );
+
+                            });
+                } else {
+                    this.replyText(replyToken, "Bot can't use profile API without user ID");
+                }
+            	break;
+            }
+            /***
+             * add 2017.10.17 taku.shimomura end
+             */
+
+
+
+
+
+
+
+
+           ///////////////////smmrend/////////////////////////////////////////
             case "buttons": {
                 String imageUrl = createUri("/static/buttons/1040.jpg");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
