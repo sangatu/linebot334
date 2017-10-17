@@ -305,7 +305,7 @@ public class KitchenSinkController {
             case "Q1.Yes": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "Q2A頬に潤い(みずみずしさ)がありますか？",
-                new MessageAction("Yes", "Q2A.Ys"),
+                new MessageAction("Yes", "Q2A.Yes"),
                 new MessageAction("No", "Q2A.No")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
@@ -319,7 +319,7 @@ public class KitchenSinkController {
             case "Q2A.No": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "Q3A頬はかさつきやすいですか？",
-                new MessageAction("Yes", "Q3A.Ys"),
+                new MessageAction("Yes", "Q3A.Yes"),
                 new MessageAction("No", "Q3A.No")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
@@ -338,7 +338,7 @@ public class KitchenSinkController {
             case "Q1.No": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "Q2B洗顔後、お手入れをしないでいると頬が突っ張りますか？",
-                new MessageAction("Yes", "Q2B.Ys"),
+                new MessageAction("Yes", "Q2B.Yes"),
                 new MessageAction("No", "Q2B.No")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
@@ -348,7 +348,7 @@ public class KitchenSinkController {
             case "Q2B.Yes": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "Q3B頬がかさつきやすいですか？",
-                new MessageAction("Yes", "Q3B.Ys"),
+                new MessageAction("Yes", "Q3B.Yes"),
                 new MessageAction("No", "Q3B.No")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
@@ -366,7 +366,7 @@ public class KitchenSinkController {
             case "Q2B.No": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "Q3C肌にしっとり感がありますか？",
-                new MessageAction("Yes", "Q3C.Ys"),
+                new MessageAction("Yes", "Q3C.Yes"),
                 new MessageAction("No", "Q3C.No")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
@@ -380,7 +380,7 @@ public class KitchenSinkController {
             case "Q3C.No": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "Q3B頬がかさつきやすいですか？",
-                new MessageAction("Yes", "Q3B.Ys"),
+                new MessageAction("Yes", "Q3B.Yes"),
                 new MessageAction("No", "Q3B.No")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
