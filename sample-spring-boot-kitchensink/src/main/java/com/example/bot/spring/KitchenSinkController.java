@@ -265,7 +265,8 @@ public class KitchenSinkController {
             }
             /////////////////////////////////////////////////////////////////////////////////////
             case "目安箱":
-            	this.replyText(replyToken, "いつもご利用ありがとうございます。\nご意見などがございましたらこちらでお願いします。\n");
+            	this.replyText(replyToken, "いつもご利用ありがとうございます。\nご意見などがございましたらこちらでお願いします。");
+            	this.replyText(replyToken, "ご意見ありがとうございます。\nこれからもどうぞよろしくお願いします。");
             	break;
 
             case "bye": {
