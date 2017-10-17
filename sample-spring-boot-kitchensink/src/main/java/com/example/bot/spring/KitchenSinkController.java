@@ -276,7 +276,7 @@ public class KitchenSinkController {
                 }
                 break;
             }
-            case "A": {
+            case "訪問予約": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "Do it?",
                 new MessageAction("電話?", "Yes!"),
