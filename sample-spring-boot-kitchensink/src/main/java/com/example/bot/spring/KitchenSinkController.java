@@ -263,6 +263,32 @@ public class KitchenSinkController {
                 }
                 break;
             }
+            case "目安箱": {
+                String userId = event.getSource().getUserId();
+                if (userId != null) {
+                    lineMessagingClient
+                            .getProfile(userId)
+                            .whenComplete((profile, throwable) -> {
+                                if (throwable != null) {
+                                    this.replyText(replyToken, throwable.getMessage());
+                                    return;
+                                }
+
+                                this.reply(
+                                        replyToken,
+                                        Arrays.asList(new TextMessage(
+                                                              "Display name: " + profile.getDisplayName()+"さん"),
+                                                      new TextMessage("Status message: "
+                                                                      + profile.getStatusMessage()))
+                                );
+
+                            });
+                } else {
+                    this.replyText(replyToken, "Bot can't use profile API without user ID");
+                }
+                break;
+            }
+
             case "bye": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
