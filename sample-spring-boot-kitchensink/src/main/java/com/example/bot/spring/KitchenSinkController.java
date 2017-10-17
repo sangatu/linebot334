@@ -252,7 +252,7 @@ public class KitchenSinkController {
                                 this.reply(
                                         replyToken,
                                         Arrays.asList(new TextMessage(
-                                                              "Display name: " + profile.getDisplayName()"さん"),
+                                                              "Display name: " + profile.getDisplayName()+"さん"),
                                                       new TextMessage("Status message: "
                                                                       + profile.getStatusMessage()))
                                 );
