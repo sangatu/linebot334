@@ -279,8 +279,8 @@ public class KitchenSinkController {
             case "訪問予約": {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                 "Do it?",
-                new MessageAction("電話", "Yes!"),
-                new MessageAction("ネット", "No!")
+                new MessageAction("電話?", "Yes!"),
+                new MessageAction("ネット?", "No!")
                  );
                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
                this.reply(replyToken, templateMessage);
