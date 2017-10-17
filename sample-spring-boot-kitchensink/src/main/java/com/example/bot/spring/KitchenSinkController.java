@@ -265,12 +265,27 @@ public class KitchenSinkController {
             }
             /////////////////////////////////////////////////////////////////////////////////////
             case "目安箱": {
-                String userId = event.getSource().getUserId();
-                this.reply(
-                        replyToken,
-                        Arrays.asList(new TextMessage(
-                                              "目安箱"),
-)
+            	 String userId = event.getSource().getUserId();
+                 if (userId != null) {
+                     lineMessagingClient
+                             .getProfile(userId)
+                             .whenComplete((profile, throwable) -> {
+                                 if (throwable != null) {
+                                     this.replyText(replyToken, throwable.getMessage());
+                                     return;
+                                 }
+
+                                 this.reply(
+                                         replyToken,
+                                         Arrays.asList(new TextMessage(
+                                                               "ところてん"))
+                                 );
+
+                             });
+                 } else {
+                     this.replyText(replyToken, "Bot can't use profile API without user ID");
+                 }
+                 break;
             }
 
             case "bye": {
