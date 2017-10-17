@@ -281,13 +281,24 @@ public class KitchenSinkController {
                                                                "いつもご利用ありがとうございます\n"
                                                                + "ご意見ご要望などがございましたらこちらでお願いします。"))
                                  );
-                                 this.reply(
-                                         replyToken,
-                                         Arrays.asList(new TextMessage(
-                                                               "ご意見ありがとうございます。\n"
-                                                               + "これからもご利用お願いします\n"))
-                                 );
+
                              });
+                     lineMessagingClient
+                     .getProfile(userId)
+                     .whenComplete((profile, throwable) -> {
+                         if (throwable != null) {
+                             this.replyText(replyToken, throwable.getMessage());
+                             return;
+                         }
+
+                         this.reply(
+                                 replyToken,
+                                 Arrays.asList(new TextMessage(
+                                                       "ご意見ありがとうございます\n"
+                                                       + "これからもどうぞよろしくお願いします。"))
+                         );
+
+                     });
                  } else {
                      this.replyText(replyToken, "Bot can't use profile API without user ID");
                  }
