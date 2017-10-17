@@ -397,7 +397,7 @@ public class KitchenSinkController {
             }
             //////////////////ここまで/////////////////////////////////////////
             //////////////////smmrstart/////////////////////////////////////
-            case "商品情報":{
+        /*    case "商品情報":{
                 String imageUrl = createUri("/static/Products/main-products.png");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
                         imageUrl,
@@ -417,15 +417,7 @@ public class KitchenSinkController {
                 this.reply(replyToken, templateMessage);
                 break;
             }
-            /***
-             * add 2017.10.16 taku.shimomura end
-             */
 
-
-            /***
-             * カテゴリをイメージカルーセルで表示
-             * add 2017.10.17 shimomurataku begin
-             */
             case "クリーム・美容液・洗顔・メイクアップ":{
             	 String imageUrl = createUri("/static/Products/Category/cream/maberasu.png");
             	 String imgLiquidFoundation = createUri("/static/Products/Category/liquidfoundation/success.png");
@@ -455,9 +447,6 @@ public class KitchenSinkController {
                  this.reply(replyToken,templateMessage);
                  break;
             }
-            /***
-             * add 2017.10.17 taku.shimomura end
-             */
 
             //カテゴリ2段目
             case "ローション・ヘアケア・健康食品":{
@@ -488,10 +477,6 @@ public class KitchenSinkController {
                 break;
            }
 
-            /***
-             * 悩みをイメージカルーセル表示
-             * add 2017.10.17 taku.shimomura begin
-             */
             case "ニキビ・乾燥肌・年齢肌":{
            	 String imageUrl = createUri("/static/Products/Skin/acne/creamsoap.png");
            	 String imgSkinAge = createUri("/static/Products/Skin/age/lamirumu.png");
@@ -515,9 +500,6 @@ public class KitchenSinkController {
                 this.reply(replyToken, templateMessage);
                 break;
            }
-            /***
-             * add 2017.10.17 taku.shimomura end
-             */
 
             //お悩み2段目
             case "ハリ・脂性肌・毛穴の汚れ":{
@@ -545,10 +527,6 @@ public class KitchenSinkController {
                    break;
               }
 
-            /***
-             * ポイント確認
-             * add 2017.10.17 taku.shimomura begin
-             */
             case "ポイント確認":{
             	String userId = event.getSource().getUserId();
                 if (userId != null) {
@@ -572,15 +550,7 @@ public class KitchenSinkController {
                 }
             	break;
             }
-            /***
-             * add 2017.10.17 taku.shimomura end
-             */
 
-            /***
-             * リマインド機能
-             * 訪問する日時を教えてくれる
-             * add 2017.10.17 taku.shimomura begin
-             */
             case "訪問日時を教えて":{
             	String userId = event.getSource().getUserId();
 
@@ -609,9 +579,7 @@ public class KitchenSinkController {
                 }
             	break;
             }
-            /***
-             * add 2017.10.17 taku.shimomura end
-             */
+*/
 
            ///////////////////smmrend/////////////////////////////////////////
             case "buttons": {
