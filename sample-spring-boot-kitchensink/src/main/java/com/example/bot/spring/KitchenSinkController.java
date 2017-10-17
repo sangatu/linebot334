@@ -263,7 +263,7 @@ public class KitchenSinkController {
                 }
                 break;
             }
-            /////////////////////////////////////////////////////////////////////////////////////
+            ///////////////編集//////////////////////////////////////////////////////////////////////
             case "目安箱":{
             	this.replyText(replyToken, "いつもご利用ありがとうございます。\nご意見などがございましたらこちらでお願いします。\n072-368-2222");
             	break;
@@ -395,7 +395,7 @@ public class KitchenSinkController {
                this.reply(replyToken, templateMessage);
                break;
             }
-
+            //////////////////ここまで/////////////////////////////////////////
             //////////////////smmrstart/////////////////////////////////////
             case "商品情報":{
                 String imageUrl = createUri("/static/Products/main-products.png");
@@ -421,7 +421,7 @@ public class KitchenSinkController {
              * add 2017.10.16 taku.shimomura end
              */
 
-            
+
             /***
              * カテゴリをイメージカルーセルで表示
              * add 2017.10.17 shimomurataku begin
