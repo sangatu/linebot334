@@ -293,7 +293,7 @@ public class KitchenSinkController {
                break;
             }
             case "電話で予約する":{
-            	this.replyText(replyToken, "\n072-368-2222");
+            	this.replyText(replyToken, "072-368-2222");
             	break;
             }
             case "ネットで予約する":{
