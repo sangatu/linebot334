@@ -286,7 +286,7 @@ public class KitchenSinkController {
                 this.reply(replyToken, templateMessage);
                 break;
             }*/
-            case "1": {
+            case "あ: {
                 ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                         "電話とネットのどちらで訪問予約を行いますか？",
                         new MessageAction("電話をかける", "電話で予約する"),
