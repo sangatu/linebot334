@@ -421,6 +421,7 @@ public class KitchenSinkController {
              * add 2017.10.16 taku.shimomura end
              */
 
+            
             /***
              * カテゴリをイメージカルーセルで表示
              * add 2017.10.17 shimomurataku begin
