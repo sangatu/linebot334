@@ -712,7 +712,7 @@ public class KitchenSinkController {
                 break;
             case "イメージマップ":
                 this.reply(replyToken, new ImagemapMessage(
-                        createUri("/static/Products/imagemap2.png"),
+                        createUri("/static/Products/imagemap2.jpg"),
                         "This is alt text",
                         new ImagemapBaseSize(1040, 1040),
                         Arrays.asList(
