@@ -269,7 +269,7 @@ public class KitchenSinkController {
             }
             ///////////////編集//////////////////////////////////////////////////////////////////////
             case "目安箱":{
-            	this.replyText(replyToken, "いつもご利用ありがとうございます。\nご意見などがございましたらこちらでお願いします。\nメールアドレス:n-yamasaki@earthinter.co.jp");
+            	this.replyText(replyToken, "いつもご利用ありがとうございます。\nご意見などがございましたらこちらでお願いします。\nメールアドレス:\nn-yamasaki@earthinter.co.jp");
             	break;
             }
             case "bye": {
@@ -297,7 +297,7 @@ public class KitchenSinkController {
                break;
             }
             case "電話で予約する":{
-            	this.replyText(replyToken, "072-368-2222");
+            	this.replyText(replyToken, "06-6150-3150");
             	break;
             }
             case "ネットで予約する":{
