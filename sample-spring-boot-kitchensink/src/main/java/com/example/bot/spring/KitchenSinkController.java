@@ -25,6 +25,7 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Collections;
 //////add
+import  java.util.TimeZone;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 //////
@@ -557,15 +558,15 @@ public class KitchenSinkController {
 
             case "訪問日時を教えて":{
             	String userId = event.getSource().getUserId();
-            	TimeZone.setDefault(TimeZone.getTimeZone("JST"));
-               // TimeZone jst = TimeZone.getTimeZone("JST");
+            	
+                TimeZone jst = TimeZone.getTimeZone("JST");
 
-                Calendar today = Calendar.getInstance();
+                Calendar today = Calendar.getInstance(jst);
 
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日kk時mm分");
                 ///
 
-                today.setTimeZone(jst);
+               // today.setTimeZone(jst);
                 ///
                 if (userId != null) {
                     lineMessagingClient
