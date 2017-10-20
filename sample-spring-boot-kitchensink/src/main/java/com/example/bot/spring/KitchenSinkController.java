@@ -558,8 +558,8 @@ public class KitchenSinkController {
 
             case "訪問日時を教えて":{
             	String userId = event.getSource().getUserId();
-            	
-                TimeZone jst = TimeZone.getTimeZone("JST");
+
+                TimeZone jst = TimeZone.getDefault();
 
                 Calendar today = Calendar.getInstance(jst);
 
