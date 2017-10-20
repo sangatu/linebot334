@@ -165,11 +165,11 @@ public class KitchenSinkController {
     }
 
     @EventMapping
-    public void handleFollowEvent(FollowEvent event) {
+   /* public void handleFollowEvent(FollowEvent event) {
         String replyToken = event.getReplyToken();
         this.replyText(replyToken, "Got followed event");
     }
-
+*/
     @EventMapping
     public void handleJoinEvent(JoinEvent event) {
         String replyToken = event.getReplyToken();
