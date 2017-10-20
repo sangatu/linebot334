@@ -582,11 +582,11 @@ public class KitchenSinkController {
                                 this.reply(
                                         replyToken,
                                         Arrays.asList(new TextMessage(
-                                                              profile.getDisplayName() + "さんのご自宅には"+today.get(today.YEAR)+"年"
-                                                            		  									   +(today.get(today.MONTH)+1)+"月"
-                                                            		  									   +today.get(today.DAY_OF_MONTH)+"日"
-                                                            		  									   +today.get(today.HOUR_OF_DAY)+"時"
-                                                            		  									   +today.get(today.MINUTE)+"分"
+                                                              profile.getDisplayName() + "さんのご自宅には"+today.get(Calendar.YEAR)+"年"
+                                                            		  									   +(today.get(Calendar.MONTH)+1)+"月"
+                                                            		  									   +today.get(Calendar.DAY_OF_MONTH)+"日"
+                                                            		  									   +today.get(Calendar.HOUR_OF_DAY)+"時"
+                                                            		  									   +today.get(Calendar.MINUTE)+"分"
                                                             		  									   +"に訪問させていただきます"))
 
 
