@@ -297,7 +297,7 @@ public class KitchenSinkController {
                break;
             }
             case "電話で予約する":{
-            	this.replyText(replyToken, "06-6150-3150");
+            	this.replyText(replyToken, "窓口への電話番号になります。\nこちらをタップして発信してください。\n06-6150-3150");
             	break;
             }
             case "ネットで予約する":{
@@ -560,7 +560,7 @@ public class KitchenSinkController {
 
                 Calendar today = Calendar.getInstance();
 
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日kk時mm分");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd+1日kk時mm分");
 
                 if (userId != null) {
                     lineMessagingClient
