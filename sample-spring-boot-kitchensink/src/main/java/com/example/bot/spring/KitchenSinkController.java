@@ -563,7 +563,7 @@ public class KitchenSinkController {
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日kk時mm分");
                 ///
                 TimeZone jst = TimeZone.getTimeZone("JST");
-                tiday.setTimeZone(jst);
+                today.setTimeZone(jst);
                 ///
                 if (userId != null) {
                     lineMessagingClient
