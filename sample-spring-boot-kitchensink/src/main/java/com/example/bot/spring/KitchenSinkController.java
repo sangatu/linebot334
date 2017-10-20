@@ -753,7 +753,7 @@ public class KitchenSinkController {
                                                 0, 520, 520, 520
                                         )
                                 ),
-                                new MessageImagemapAction(
+                                new URIImagemapAction(
                                         "http://www.ionkesho.jp/products/category/liquidfoundation.html",
                                         new ImagemapArea(
                                                 520, 520, 520, 520
@@ -764,6 +764,7 @@ public class KitchenSinkController {
                 break;
             default:
                 log.info("Returns echo message {}: {}", replyToken, text);
+                ///エコー
                /* this.replyText(
                         replyToken,
                         text
