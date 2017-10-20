@@ -164,8 +164,8 @@ public class KitchenSinkController {
         log.info("unfollowed this bot: {}", event);
     }
 
-    @EventMapping
-   /* public void handleFollowEvent(FollowEvent event) {
+   /* @EventMapping
+    public void handleFollowEvent(FollowEvent event) {
         String replyToken = event.getReplyToken();
         this.replyText(replyToken, "Got followed event");
     }
