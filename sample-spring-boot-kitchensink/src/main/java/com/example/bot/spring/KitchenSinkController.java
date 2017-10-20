@@ -563,7 +563,7 @@ public class KitchenSinkController {
 
                 Calendar today = Calendar.getInstance(jst);
 
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日kk時mm分");
+               /// SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日kk時mm分");
                 ///
 
                 today.setTimeZone(jst);
