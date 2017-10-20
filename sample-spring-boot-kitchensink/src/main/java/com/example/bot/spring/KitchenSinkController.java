@@ -302,7 +302,7 @@ public class KitchenSinkController {
             	break;
             }
             case "ネットで予約する":{
-            	this.replyText(replyToken,"http://www.ionkesho.jp/");
+            	this.replyText(replyToken,"インターネットでの予約には次のリンクを押してください。\n http://www.ionkesho.jp/");
             	break;
             }
             case "アドバイス": {
