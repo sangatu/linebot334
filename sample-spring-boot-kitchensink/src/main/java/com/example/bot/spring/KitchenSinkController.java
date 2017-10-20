@@ -736,25 +736,25 @@ public class KitchenSinkController {
                         new ImagemapBaseSize(1040, 1040),
                         Arrays.asList(
                                 new URIImagemapAction(
-                                        "http://www.ionkesho.jp/products/category/cream.html",
+                                        "https://goo.gl/75Xmox",
                                         new ImagemapArea(
                                                 0, 0, 520, 520
                                         )
                                 ),
                                 new URIImagemapAction(
-                                        "http://www.ionkesho.jp/products/category/bodycare.html",
+                                        "https://goo.gl/zL4ZsS",
                                         new ImagemapArea(
                                                 520, 0, 520, 520
                                         )
                                 ),
                                 new URIImagemapAction(
-                                        "http://www.ionkesho.jp/products/category/lotion.html",
+                                        "https://goo.gl/H6dmwr",
                                         new ImagemapArea(
                                                 0, 520, 520, 520
                                         )
                                 ),
                                 new URIImagemapAction(
-                                        "http://www.ionkesho.jp/products/category/liquidfoundation.html",
+                                        "https://goo.gl/UukRhx",
                                         new ImagemapArea(
                                                 520, 520, 520, 520
                                         )
