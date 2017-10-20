@@ -560,8 +560,11 @@ public class KitchenSinkController {
 
                 Calendar today = Calendar.getInstance();
 
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd+1日kk時mm分");
-
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日kk時mm分");
+                ///
+                TimeZone jst = TimeZone.getTimeZone("JST");
+                tiday.setTimeZone(jst);
+                ///
                 if (userId != null) {
                     lineMessagingClient
                             .getProfile(userId)
@@ -571,10 +574,22 @@ public class KitchenSinkController {
                                     return;
                                 }
 
-                                this.reply(
+                                /*this.reply(
                                         replyToken,
                                         Arrays.asList(new TextMessage(
                                                               profile.getDisplayName() + "さんのご自宅には"+sdf.format(today.getTime())+"に訪問させていただきます"))
+                                                              */
+                                this.reply(
+                                        replyToken,
+                                        Arrays.asList(new TextMessage(
+                                                              profile.getDisplayName() + "さんのご自宅には"+today.get(today.YEAR)+"年"
+                                                            		  									   +(today.get(today.MONTH)+1)+"月"
+                                                            		  									   +today.get(today.DAY_OF_MONTH)+"日"
+                                                            		  									   +today.get(today.HOUR_OF_DAY)+"時"
+                                                            		  									   +today.get(today.MINUTE)+"分"
+                                                            		  									   +"に訪問させていただきます"))
+
+
                                 );
 
                             });
