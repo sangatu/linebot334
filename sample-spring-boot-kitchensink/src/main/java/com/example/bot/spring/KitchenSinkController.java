@@ -764,10 +764,10 @@ public class KitchenSinkController {
                 break;
             default:
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(
+               /* this.replyText(
                         replyToken,
                         text
-                );
+                );*/
                 break;
         }
     }
