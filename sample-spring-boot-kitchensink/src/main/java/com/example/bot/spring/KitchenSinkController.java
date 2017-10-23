@@ -274,7 +274,7 @@ public class KitchenSinkController {
             	break;
             }
             case "ちくわ大明神":{
-            	this.replyText(replyToken, " △△△△△△\n ＜だれだこいつ＞\n ▽▽▽▽▽▽");
+            	this.replyText(replyToken, "△△△△△△△△\n ＜だれだこいつ＞\n ▽▽▽▽▽▽▽▽");
             	break;
             }
             case "bye": {
