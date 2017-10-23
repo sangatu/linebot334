@@ -273,6 +273,10 @@ public class KitchenSinkController {
             	this.replyText(replyToken, "いつもご利用ありがとうございます。\nご意見などがございましたらこちらでお願いします。\nメールアドレス:\nn-yamasaki@earthinter.co.jp");
             	break;
             }
+            case "ちくわ大明神":{
+            	this.replyText(replyToken, " △△△△△△\n ＜だれだこいつ＞\n ▽▽▽▽▽▽");
+            	break;
+            }
             case "bye": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
