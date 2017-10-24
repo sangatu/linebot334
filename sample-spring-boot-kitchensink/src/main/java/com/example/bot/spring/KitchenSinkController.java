@@ -28,6 +28,23 @@ import java.util.Collections;
 import  java.util.TimeZone;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
+//add import begin
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+//Jsoup begin
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+//Jsoup end
+import java.text.ParseException;//add 2017.10.23
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Map;
+import java.text.SimpleDateFormat;
 //////
 import java.util.List;
 import java.util.UUID;
@@ -607,6 +624,63 @@ public class KitchenSinkController {
             	break;
             }
 
+            case "ニュース":{
+            	String userInfo = event.getSource().getUserId();
+            	if(userInfo != null){
+            		lineMessagingClient.getProfile(userInfo).whenComplete((profile, throwable) ->{
+            			if(throwable != null){
+            				this.replyText(replyToken, throwable.getMessage());
+            				return;
+            			}
+
+            			Document doc = null ;
+            			try{
+            					doc = Jsoup.connect("https://headlines.yahoo.co.jp/rss/vogue-all.xml")
+            					.userAgent("mozilla/5.0 (windows nt 6.1; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/62.0.3202.62 safari/537.36")
+            					.timeout(500).get();
+            			}catch(IOException e){
+            				e.printStackTrace();
+            			}
+
+            			Elements elements = doc.select("lastBuildDate");
+            			Element element = elements.first();
+            			String dateStr = element.text();
+
+            			SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.US);
+            			Date date = null;
+
+            			try{
+            				date = sdf.parse(dateStr);
+            			}catch(ParseException e){
+            				e.printStackTrace();
+            			}
+
+            			System.out.println("更新日時\n"+date);
+
+            			//個別記事情報Parse
+            			Elements privateElements = doc.select("item");
+
+            			String title="";
+            			String link="";
+            			String category="";
+
+            			for(Element item : privateElements){
+            					title = item.getElementsByTag("title").text();
+            					link = item.getElementsByTag("link").text();//このlinkはリダイレクトが行われるので一見よくわからない形になっている
+            					category = item.getElementsByTag("category").text();
+            			}
+
+            			this.reply(
+            					replyToken,
+            					Arrays.asList(new TextMessage(profile.getDisplayName() + "さんにお勧めのニュースがあります\n"
+            							+date+"\n"+title+"\n"+link+"\n"+category))
+            			);
+            		});
+            	}else{
+            		this.replyText(replyToken, "Bot can't use profile API without user ID");
+            	}
+            	break;
+            }
 
            ///////////////////smmrend/////////////////////////////////////////
            /* case "buttons": {
