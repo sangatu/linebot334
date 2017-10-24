@@ -243,7 +243,7 @@ public class KitchenSinkController {
 
         log.info("Got text message from {}: {}", replyToken, text);
         switch (text) {
-            case "profile": {
+          /*  case "profile": {
                 String userId = event.getSource().getUserId();
                 if (userId != null) {
                     lineMessagingClient
@@ -267,7 +267,7 @@ public class KitchenSinkController {
                     this.replyText(replyToken, "Bot can't use profile API without user ID");
                 }
                 break;
-            }
+            }*/
             ///////////////編集//////////////////////////////////////////////////////////////////////
             case "目安箱":{
             	this.replyText(replyToken, "いつもご利用ありがとうございます。\nご意見などがございましたらこちらでお願いします。\nメールアドレス:\nn-yamasaki@earthinter.co.jp");
@@ -609,7 +609,7 @@ public class KitchenSinkController {
 
 
            ///////////////////smmrend/////////////////////////////////////////
-            case "buttons": {
+           /* case "buttons": {
                 String imageUrl = createUri("/static/buttons/1040.jpg");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
                         imageUrl,
@@ -765,7 +765,7 @@ public class KitchenSinkController {
                                 )
                         )
                 ));
-                break;
+                break;*/
             default:
                 log.info("Returns echo message {}: {}", replyToken, text);
                 ///エコー
